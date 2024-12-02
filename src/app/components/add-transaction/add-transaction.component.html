@@ -1,0 +1,89 @@
+<div class="transaction-form-container">
+    <h2 class="form-title">Add Transaction</h2>
+    <form [formGroup]="transactionForm" (ngSubmit)="submitForm()" class="transaction-form">
+      <!-- <div class="form-group">
+        <label for="id" class="form-label">ID</label>
+        <input 
+          id="id" 
+          formControlName="id" 
+          required 
+          class="form-input"
+        />
+      </div> -->
+  
+      <div class="form-group">
+        <label for="createdDate" class="form-label">Created Date</label>
+        <input 
+          id="createdDate" 
+          formControlName="createdDate" 
+          required 
+          class="form-input"
+          type="date" 
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="lastModifiedDate" class="form-label">Last Modified Date</label>
+        <input 
+          id="lastModifiedDate" 
+          formControlName="lastModifiedDate" 
+          required 
+          class="form-input"
+          type="date"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="description" class="form-label">Description</label>
+        <input 
+          id="description" 
+          formControlName="description" 
+          required 
+          class="form-input"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="amount" class="form-label">Amount</label>
+        <input 
+          id="amount" 
+          type="number" 
+          formControlName="amount" 
+          required 
+          class="form-input"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="remarks" class="form-label">Remarks</label>
+        <input 
+          id="remarks" 
+          formControlName="remarks" 
+          required 
+          class="form-input"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="status" class="form-label">Status</label>
+        <select 
+          id="status" 
+          formControlName="status" 
+          required 
+          class="form-select"
+        >
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+  
+      <button 
+        type="submit" 
+        [disabled]="transactionForm.invalid" 
+        class="form-submit-btn"
+      >
+        Submit Transaction
+      </button>
+    </form>
+  </div>

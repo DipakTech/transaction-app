@@ -1,0 +1,37 @@
+<div class="transaction-list-container">
+  <div class="heading-content">
+    <h2 class="transaction-list-title">Transaction List</h2>
+    <button (click)="navigateToAddTransaction()" class="add-transaction-btn">Add Transaction</button>
+  </div>
+  <div class="transaction-table-wrapper">
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Created Date</th>
+          <th>Last Modified Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Remarks</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of displayedTransactions">
+          <td>{{ transaction.id }}</td>
+          <td>{{ transaction.createdDate }}</td>
+          <td>{{ transaction.lastModifiedDate }}</td>
+          <td>{{ transaction.description }}</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.remarks }}</td>
+          <td>{{ transaction.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
